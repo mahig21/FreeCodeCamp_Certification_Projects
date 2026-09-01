@@ -42,3 +42,15 @@ def add_setting(settings, tupleKey):
         settings[key]=value
         return f"Setting '{key}' added with value '{value}' successfully!"
 print(add_setting({'theme': 'light'}, ('volume', 'high')))
+
+def update_setting(settings, tupleKey):
+    key=tupleKey[0].lower()
+    value=tupleKey[1].lower()
+    if key not in settings:
+        return f"Setting '{key}' does not exist! Cannot update a non-existing setting."
+    else:
+        settings[key]=value
+        return f"Setting '{key}' updated to '{value}' successfully!"
+
+print(update_setting({'theme': 'light'}, ('volume', 'high')))
+print(update_setting({'theme': 'light'}, ('theme', 'dark')))
