@@ -33,3 +33,12 @@ For testing the code, you should create a dictionary named test_settings to stor
 test_settings = {
    'theme': 'light' 
 }
+def add_setting(settings, tupleKey):
+    key=tupleKey[0].lower()
+    value=tupleKey[1].lower()
+    if key in settings:
+        return f"Setting '{key}' already exists! Cannot add a new setting with this name."
+    else:
+        settings[key]=value
+        return f"Setting '{key}' added with value '{value}' successfully!"
+print(add_setting({'theme': 'light'}, ('volume', 'high')))
