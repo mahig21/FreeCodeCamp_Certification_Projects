@@ -63,3 +63,16 @@ def delete_setting(settings, tupleKey):
         del settings[key]
         return f"Setting '{key}' deleted successfully!"
 print(delete_setting({'theme': 'light'}, 'theme'))
+
+def view_settings(settings):
+    newStr=""
+    if not settings:
+        return "No settings available."
+    else:
+        newStr+="Current User Settings:\n"
+        for i in settings:
+            first=i[0].upper()
+            new=first+i[1:]
+            newStr+=new+": "+settings[i]+"\n"
+        return newStr
+print(view_settings({'theme': 'dark', 'notifications': 'enabled', 'volume': 'high'}))
