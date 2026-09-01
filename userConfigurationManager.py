@@ -30,3 +30,6 @@ Notifications: enabled
 Volume: high
 For testing the code, you should create a dictionary named test_settings to store some user configuration preferences.
 """
+test_settings = {
+   'theme': 'light' 
+}
