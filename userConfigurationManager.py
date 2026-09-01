@@ -54,3 +54,12 @@ def update_setting(settings, tupleKey):
 
 print(update_setting({'theme': 'light'}, ('volume', 'high')))
 print(update_setting({'theme': 'light'}, ('theme', 'dark')))
+
+def delete_setting(settings, tupleKey):
+    key=tupleKey.lower()
+    if key not in settings:
+        return "Setting not found!"
+    else:
+        del settings[key]
+        return f"Setting '{key}' deleted successfully!"
+print(delete_setting({'theme': 'light'}, 'theme'))
